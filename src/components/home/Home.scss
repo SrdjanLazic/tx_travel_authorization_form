@@ -1,0 +1,48 @@
+.home-wrapper {
+  .video-wrapper {
+    position: relative;
+
+    video {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.home-wrapper {
+  .video-wrapper {
+    .video-overlay {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 20rem;
+      text-align: center;
+
+      button {
+        padding: 20px 50px;
+        border-radius: 50px;
+        border: none;
+        color: white;
+        background-color: #00DA91;
+        font-size: 1em;
+        font-weight: bold;
+
+        &:hover {
+          cursor: pointer;
+          background-color: #54ffc4;
+        }
+      }
+
+      h1 {
+        color: white;
+        font-size: 5rem;
+        text-shadow: 2px 2px #2d2d2d;
+      }
+    }
+
+
+  }
+}
