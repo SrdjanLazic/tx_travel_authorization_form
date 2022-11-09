@@ -1,3 +1,5 @@
+@import "../../style/variables.scss";
+
 .form-wrapper {
   padding: 0 10%;
 
@@ -7,7 +9,31 @@
 
   form {
 
-    .personal-info, .trip-details {
+      .divider {
+      margin-bottom: 30px;
+      border: 0;
+      height: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .submit-btn {
+      padding: 10px 30px;
+      border-radius: 50px;
+      border: none;
+      color: white;
+      background-color: #00DA91;
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: 20px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #0cf8a4;
+      }
+    }
+
+    .personal-info, .trip-details, .date-and-time {
       justify-content: center;
       margin-bottom: 25px;
       background-color: #00DA91;
@@ -16,16 +42,27 @@
       color: white;
       text-shadow: 0.2px 0.2px #2d2d2d;
 
+      .person-icon, .trip-details-icon, .date-and-time-icon {
+        display: block;
+        margin: 0 auto;
+      }
+
       h2 {
         text-align: center;
       }
 
-      .personal-info-form, .trip-details-form {
+      .personal-info-form, .trip-details-form, .date-and-time-form {
         margin: 0 auto;
         display: flex;
         justify-content: center;
         gap: 50px;
         flex-direction: row;
+
+        @media only screen and (max-width: 776px) {
+          flex-direction: column;
+          gap: 25px;
+          text-align: center;
+        }
 
         .flex-left, .flex-right {
           div {
@@ -34,11 +71,21 @@
         }
 
         .meals-input {
+
+
           .meals-input-div {
             gap: 25px;
             display: flex;
             flex-direction: row;
             margin-bottom: 25px;
+
+            input {
+              width: 5em;
+            }
+
+            @media only screen and (max-width: 776px) {
+              flex-direction: column;
+            }
           }
         }
       }
@@ -50,6 +97,16 @@
       border: none;
       border-radius: 5px;
       padding-left: 8px;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 3px 10px 2px rgba(0,0,0,0.12);
+      }
+
+      @media only screen and (max-width: 776px) {
+        width: 20em;
+        height: 20em;
+      }
     }
 
     input, select {
@@ -64,6 +121,11 @@
       &:focus {
         outline: none;
         box-shadow: 0 3px 10px 2px rgba(0,0,0,0.12);
+      }
+
+      @media only screen and (max-width: 776px) {
+        display: block;
+        margin: 0 auto;
       }
 
     }
