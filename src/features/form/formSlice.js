@@ -1,21 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const formSlice = createSlice({
-    name: 'favourites',
+    name: 'form',
     initialState: {
         value: {},
     },
     reducers: {
-        addToFavourites: (state, action) => {
-            state.value.push(action.payload)
+        submitForm: (state, action) => {
+            state.value = action.payload;
         },
-        removeFromFavourites: (state, action) => {
-            alert("HERE")
-        },
+        // removeFromFavourites: (state, action) => {
+        //     alert("HERE")
+        // },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { submitForm} = formSlice.actions
+export const {submitForm} = formSlice.actions
 
 export default formSlice.reducer

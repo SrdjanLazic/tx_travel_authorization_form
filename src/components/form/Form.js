@@ -1,16 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
+import {Navigate, RedirectFunction, useNavigate} from 'react-router-dom';
 import './Form.scss'
+import { useSelector, useDispatch } from 'react-redux'
 import PersonIcon from '@mui/icons-material/Person';
 import LuggageIcon from '@mui/icons-material/Luggage';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import {submitForm} from "../../features/form/formSlice";
+import Loading from '../loading/Loading'
+
+
 
 function Form(props) {
 
-    const handleSubmit = (event) => {
-        console.log(form);
-        event.preventDefault();
-    }
-
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [form, setForm] = useState({
         name: '',
         department: '',
@@ -31,9 +34,49 @@ function Form(props) {
         submissionDate: '',
         depDate: ''
     })
+    const [showLoading, setShowLoading] = useState(false);
+
+    function containsOnlyNumbers(str) {
+        return /^\d+$/.test(str);
+    }
+
+    function validateForm(){
+        let errors = [];
+
+        if(!containsOnlyNumbers(form.passport)) {
+            errors.push("Error: Passport field contains unsupported characters.")
+        }
+        if(!containsOnlyNumbers(form.id)) {
+            errors.push("Error: ID field contains unsupported characters.")
+        }
+
+        return errors;
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        let errors = validateForm(form);
+        if(errors.length > 0){
+            for (const error of errors) {
+                alert(error);
+            }
+            return;
+        }
+        setShowLoading(true);
+        setTimeout(() => {
+            dispatch(submitForm(form));
+            navigate("/form-results")
+            setShowLoading(false)
+        }, 2500)
+
+
+    }
 
     return (
         <div className={"form-wrapper"}>
+            {
+                showLoading ? <Loading/> : null
+            }
             <div className={"title"}>
                 <h1>Travel Form</h1>
             </div>

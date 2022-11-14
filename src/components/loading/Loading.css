@@ -1,0 +1,38 @@
+.modal {
+    animation: ease-in;
+    display: flex;
+    position: fixed;
+    height: 200px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    color: #00DA91;
+    width: 50%;
+    z-index: 1;
+    top: 25%;
+    left: 25%;
+    box-shadow: 1px 1px 100px 1000px rgba(0, 0, 0, 0.80);
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+}
+
+.loading-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
