@@ -5,9 +5,15 @@
 
   .title {
     text-align: center;
+    font-size: larger;
+    color: #00DA91;
   }
 
   form {
+
+      label {
+        font-weight: 550;
+      }
 
       .divider {
       margin-bottom: 30px;
@@ -37,7 +43,7 @@
       justify-content: center;
       margin-bottom: 25px;
       background-color: #00DA91;
-      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+      box-shadow: 0 4px 12px rgba(38, 38, 38, 0.25);
       padding: 15px;
       border-radius: 15px;
       color: white;

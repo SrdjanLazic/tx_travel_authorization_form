@@ -78,7 +78,7 @@ function Form(props) {
                 showLoading ? <Loading/> : null
             }
             <div className={"title"}>
-                <h1>Travel Form</h1>
+                <h1>TX Travel Form</h1>
             </div>
             <form onSubmit={handleSubmit}>
 
@@ -135,7 +135,7 @@ function Form(props) {
 
                 <div className={"trip-details"}>
 
-                    <LuggageIcon fontSize={"large"} className={"trip-details-icon"}></LuggageIcon>
+                    <LuggageIcon fontSize={"large"} className={"trip-details-icon"}/>
                     <h2>Trip Details</h2>
                     <hr className={"divider"}/>
 
@@ -181,7 +181,7 @@ function Form(props) {
                                         ...form,
                                         purpose: e.target.value
                                     });
-                                }}></textarea>
+                                }}/>
                             </div>
                         </div>
 
@@ -238,7 +238,7 @@ function Form(props) {
 
                 <div className={"date-and-time"}>
 
-                    <CalendarMonthIcon className={"date-and-time-icon"} fontSize={"large"}></CalendarMonthIcon>
+                    <CalendarMonthIcon className={"date-and-time-icon"} fontSize={"large"}/>
                     <h2>Date & Time</h2>
                     <hr className={"divider"}/>
                     <div className={"date-and-time-form"}>
