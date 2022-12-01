@@ -9,9 +9,6 @@ export const formSlice = createSlice({
         submitForm: (state, action) => {
             state.value = action.payload;
         },
-        // removeFromFavourites: (state, action) => {
-        //     alert("HERE")
-        // },
     },
 })
 

@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
-import store from '../../../src/app/store'
 import PersonIcon from "@mui/icons-material/Person";
 import LuggageIcon from "@mui/icons-material/Luggage";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import {useSelector} from "react-redux";
 
 function FormResults(props) {
 
-    const state = store.getState();
-    const form = state.form.value;
+    const form = useSelector(state => state.form.value)
 
     return (
         <div className={"form-wrapper"}>
@@ -80,7 +79,6 @@ function FormResults(props) {
                         </div>
 
                         <div className={"flex-left"}>
-
 
                         </div>
                         <div className={"flex-right"}>

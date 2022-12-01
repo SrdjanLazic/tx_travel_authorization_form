@@ -1,5 +1,3 @@
-@import "../../style/variables.scss";
-
 .form-wrapper {
   padding: 0 10%;
 
@@ -12,7 +10,7 @@
   form {
 
       label {
-        font-weight: 550;
+        font-weight: 400;
       }
 
       .divider {
@@ -39,7 +37,7 @@
       }
     }
 
-    .personal-info, .trip-details, .date-and-time {
+    .personal-info, .trip-details, .date-and-time, .submission-date {
       justify-content: center;
       margin-bottom: 25px;
       background-color: #00DA91;
@@ -49,7 +47,8 @@
       color: white;
       text-shadow: 0.2px 0.2px #2d2d2d;
 
-      .person-icon, .trip-details-icon, .date-and-time-icon {
+
+      .header-icon {
         display: block;
         margin: 0 auto;
       }
@@ -58,7 +57,7 @@
         text-align: center;
       }
 
-      .personal-info-form, .trip-details-form, .date-and-time-form {
+      .personal-info-form, .trip-details-form, .date-and-time-form, .submission-date-form {
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -90,13 +89,29 @@
               width: 5em;
             }
 
+            @media only screen and (max-width: 980px) {
+              margin-left: 25%;
+            }
+
             @media only screen and (max-width: 776px) {
               flex-direction: column;
+              margin-left: auto;
             }
+
+
           }
         }
       }
+
+      .trip-details-form {
+        @media only screen and (max-width: 980px) {
+          flex-direction: column;
+          gap: 25px;
+          text-align: center;
+        }
+      }
     }
+
     textarea {
       background-color: #F5F5F5;
       font-size: 1em;
@@ -134,7 +149,6 @@
         display: block;
         margin: 0 auto;
       }
-
     }
 
     label {

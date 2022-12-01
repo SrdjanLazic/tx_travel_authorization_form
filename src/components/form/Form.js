@@ -65,7 +65,7 @@ function Form(props) {
         setShowLoading(true);
         setTimeout(() => {
             dispatch(submitForm(form));
-            navigate("/form-results")
+            navigate("/form-after")
             setShowLoading(false)
         }, 2500)
 
@@ -84,7 +84,7 @@ function Form(props) {
 
                 <div className={"personal-info"}>
 
-                    <PersonIcon className={"person-icon"} fontSize={"large"}/>
+                    <PersonIcon className={"header-icon"} fontSize={"large"}/>
                     <h2>Personal Information</h2>
 
                     <hr className={"divider"}/>
@@ -135,7 +135,7 @@ function Form(props) {
 
                 <div className={"trip-details"}>
 
-                    <LuggageIcon fontSize={"large"} className={"trip-details-icon"}/>
+                    <LuggageIcon fontSize={"large"} className={"header-icon"}/>
                     <h2>Trip Details</h2>
                     <hr className={"divider"}/>
 
@@ -238,7 +238,7 @@ function Form(props) {
 
                 <div className={"date-and-time"}>
 
-                    <CalendarMonthIcon className={"date-and-time-icon"} fontSize={"large"}/>
+                    <CalendarMonthIcon className={"header-icon"} fontSize={"large"}/>
                     <h2>Date & Time</h2>
                     <hr className={"divider"}/>
                     <div className={"date-and-time-form"}>

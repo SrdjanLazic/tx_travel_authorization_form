@@ -1,0 +1,89 @@
+.form-wrapper {
+
+  .trip-details {
+    .meals-input-div-after {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .country-place {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .submission-date-wrapper {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    margin-bottom: 25px;
+    background-color: #00DA91;
+    box-shadow: 0 4px 12px rgba(38, 38, 38, 0.25);
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+    text-shadow: 0.2px 0.2px #2d2d2d;
+  }
+
+  .expense-list {
+
+    justify-content: center;
+    margin-bottom: 25px;
+    background-color: #00DA91;
+    box-shadow: 0 4px 12px rgba(38, 38, 38, 0.25);
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+    flex-direction: column;
+    text-shadow: 0.2px 0.2px #2d2d2d;
+
+    .header-icon {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .expense-list-form {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-direction: column;
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+
+        div {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    .new-expense-btn {
+      margin-top: 50px;
+      padding: 10px 30px;
+      border-radius: 50px;
+      border: none;
+      color: #00DA91;
+      background-color: #fafafa;
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: 10px;
+
+      &:hover {
+        cursor: pointer;
+          background-color: white;
+      }
+    }
+  }
+
+
+
+}
