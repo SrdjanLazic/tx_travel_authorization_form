@@ -1,27 +1,78 @@
 .form-wrapper {
-  .first-section {
-    display: flex;
-    flex-direction: row;
-  }
 
-  .second-section {
-    display: flex;
-    flex-direction: row;
-  }
-
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-
-    .hide {
-      border: none;
+  .title {
+    @media print {
+      display: none;
     }
   }
 
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+  .section-bg {
+    background-color: #00DA91;
+    padding: 25px;
+    margin-bottom: 20px;
+
+    label, h3 {
+      color: white;
+      margin-top: 10px;
+    }
+
+    input, select {
+      @media print {
+        height: 2rem;
+        background-color: #F5F5F5;
+        font-size: 1em;
+        border: 1px solid black;
+        padding-left: 8px;
+      }
+    }
+
+    @media print {
+      background-color: white;
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    @media print {
+      margin-bottom: 0;
+      background-color: white;
+    }
+  }
+
+  .first-section, .second-section, .third-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .fourth-section {
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 30px;
+
+      @media only screen and (max-width: 776px) {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      td, th {
+        border: 1px solid #1c1c1c;
+        text-align: left;
+        padding: 8px;
+        background-color: white;
+      }
+
+      th, .th {
+        background-color: #dedede;
+      }
+    }
+  }
+
+  .fifth-section {
+    small {
+      color: white;
+    }
   }
 }
