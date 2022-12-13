@@ -1,0 +1,27 @@
+.form-wrapper {
+  .first-section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .second-section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+    .hide {
+      border: none;
+    }
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+}

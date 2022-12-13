@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import store from "../../app/store";
-import { useSelector } from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import './FormAfter.scss'
 import PersonIcon from "@mui/icons-material/Person";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
@@ -8,6 +8,8 @@ import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import {Button} from "@mui/material";
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PaidIcon from '@mui/icons-material/Paid';
+import LocalAirportIcon from '@mui/icons-material/LocalAirport';
+import {submitExpenses} from "../../features/form/formSlice";
 
 
 
@@ -15,13 +17,14 @@ function FormAfter(props) {
 
     const form = useSelector(state => state.form.value)
     const [counter, setCounter] =    useState(1);
+    const dispatch = useDispatch()
     const values = []
-    console.log(form)
 
     const handleClick = (event) => {
         event.preventDefault();
         setCounter(counter + 1);
     };
+
 
     // TODO: prebaciti sve ovo na store, useDispatch
     const printValues = () => {
@@ -37,6 +40,9 @@ function FormAfter(props) {
                 'currency': currency
             })
         }
+        dispatch(submitExpenses(values))
+        console.log(form)
+
     };
 
     return (
@@ -46,11 +52,22 @@ function FormAfter(props) {
                     <h1>TEF</h1>
                 </div>
                 <div className={"submission-date"}>
-                    <CalendarMonthIcon fontSize={"large"} className={"header-icon"}/>
-                    <h2>Submission Date / Datum podnošenja</h2>
+                    <LocalAirportIcon fontSize={"large"} className={"header-icon"}/>
+                    <h2>Basic Details</h2>
                     <hr className={"divider"}/>
                     <div className={"submission-date-form"}>
-                        <input type={"date"} disabled={true} value={form.submissionDate}/>
+                        <div className="flex-left">
+                            <div className="submission-date-input">
+                                <label>Submission date / Datum podnošenja</label>
+                                <input required={true} type={"date"} value={form.submissionDate} disabled={true}/>
+                            </div>
+                        </div>
+                        <div className="flex-right">
+                            <div className={"country-place"}>
+                                <label>Country and place</label>
+                                <input type={"text"} value={form.countryPlace} disabled={true}/>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className={"personal-info"}>
@@ -84,21 +101,21 @@ function FormAfter(props) {
 
                             <div className={"dep-date-input"}>
                                 <label>Departure date / Datum polaska</label>
-                                <input required={true} type={"date"} disabled={true} value={form.depDate}/>
+                                <input required={true} type={"date"}  value={form.depDate}/>
                             </div>
                             <div className={"departure-time-input"}>
                                 <label>Departure time / Vreme polaska</label>
-                                <input required={true} type={"time"} disabled={true} value={form.depTime}/>
+                                <input required={true} type={"time"}  value={form.depTime}/>
                             </div>
                         </div>
                         <div className={"flex-right"}>
                             <div className={"end-date-input"}>
                                 <label>Business trip end time / Vreme završetka sl. puta</label>
-                                <input required={true} type={"date"} disabled={true} value={form.endDate}/>
+                                <input required={true} type={"date"}  value={form.endDate}/>
                             </div>
                             <div className={"end-time-input"}>
                                 <label>Business trip end time / Vreme završetka sl. puta</label>
-                                <input required={true} type={"time"} disabled={true} value={form.endTime}/>
+                                <input required={true} type={"time"}  value={form.endTime}/>
                             </div>
                         </div>
                     </div>
@@ -110,20 +127,16 @@ function FormAfter(props) {
                     <div className={"meals-input-div-after"}>
                         <div>
                             <label>Breakfast</label>
-                            <input required={true} type={"number"} disabled={true} value={form.breakfast}/>
+                            <input required={true} type={"number"} value={form.breakfast}/>
                         </div>
                         <div>
                             <label>Lunch</label>
-                            <input required={true} type={"number"} disabled={true} value={form.lunch}/>
+                            <input required={true} type={"number"}  value={form.lunch}/>
                         </div>
                         <div>
                             <label>Dinner</label>
-                            <input required={true} type={"number"} disabled={true} value={form.dinner}/>
+                            <input required={true} type={"number"}  value={form.dinner}/>
                         </div>
-                    </div>
-                    <div className={"country-place"}>
-                        <label>Country and place</label>
-                        <input type={"text"} value={form.countryPlace}/>
                     </div>
                 </div>
                 <div className={"expense-list"}>
@@ -135,6 +148,7 @@ function FormAfter(props) {
                             return (
                                 <div className={`expense${index}`}>
                                     <div>
+                                        <h3 className={"expense-numeration"}>Expense {index+1}</h3>
                                         <label>Еxpense claim / Refundacija troškova:</label>
                                         <select id={`type${index}`}>
                                             <option value={"accommodation"}>Accommodation costs / Trošak smeštaja</option>
@@ -159,10 +173,7 @@ function FormAfter(props) {
                                             <option value={"chf"}>CHF</option>
                                         </select>
                                     </div>
-
-
                                 </div>
-
                             );
                         })}
                     </div>
@@ -170,6 +181,9 @@ function FormAfter(props) {
                 </div>
 
             </form>
+            <div className="form-after-button-wrapper">
+                <button className={"save-tef-btn"} onClick={printValues}>Submit</button>
+            </div>
         </div>
     );
 }

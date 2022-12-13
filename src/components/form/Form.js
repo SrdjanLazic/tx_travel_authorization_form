@@ -32,9 +32,11 @@ function Form(props) {
         arrivalDate: '',
         endDate: '',
         submissionDate: '',
-        depDate: ''
+        depDate: '',
+        expenses: []
     })
     const [showLoading, setShowLoading] = useState(false);
+    const [pageNumber, setPageNumber] = useState(1)
 
     function containsOnlyNumbers(str) {
         return /^\d+$/.test(str);
@@ -65,22 +67,27 @@ function Form(props) {
         setShowLoading(true);
         setTimeout(() => {
             dispatch(submitForm(form));
-            navigate("/form-after")
+            navigate("/form-abroad")
             setShowLoading(false)
         }, 2500)
-
-
     }
+
+    function handleClick(pageNum){
+        // Changing state
+        setPageNumber(pageNum)
+    };
 
     return (
         <div className={"form-wrapper"}>
             {
                 showLoading ? <Loading/> : null
             }
-            <div className={"title"}>
-                <h1>TX Travel Form</h1>
-            </div>
             <form onSubmit={handleSubmit}>
+
+
+                <div className="title">
+                    <img className="tx-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Logo_tx_group.png/1920px-Logo_tx_group.png" alt=""/>
+                </div>
 
                 <div className={"personal-info"}>
 
@@ -306,6 +313,7 @@ function Form(props) {
                         </div>
                     </div>
                 </div>
+
                 <input className={"submit-btn"} type="submit" value="Submit" />
             </form>
         </div>

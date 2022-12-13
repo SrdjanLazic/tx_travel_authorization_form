@@ -1,11 +1,30 @@
 .form-wrapper {
 
+  display: flex;
+  flex-direction: column;
+
+  .flex-left2, .flex-right2 {
+
+    div {
+      margin-bottom: 20px;
+    }
+  }
+
   .trip-details {
     .meals-input-div-after {
       display: flex;
       flex-direction: row;
       gap: 10px;
       justify-content: center;
+
+      @media only screen and (max-width: 980px) {
+        flex-direction: column;
+        align-items: center;
+
+        label {
+          text-align: center;
+        }
+      }
     }
 
     .country-place {
@@ -50,14 +69,36 @@
       margin: 0 auto;
       display: flex;
       justify-content: center;
-      gap: 50px;
+      gap: 20px;
       flex-direction: column;
+
+      .expense-numeration {
+        display: none;
+      }
 
       div {
         display: flex;
         flex-direction: row;
         justify-content: center;
         gap: 10px;
+
+        @media only screen and (max-width: 1280px) {
+          flex-direction: column;
+          background-color: #00a870;
+          border-radius: 15px;
+          padding: 15px;
+          gap: 2px;
+
+          .expense-numeration {
+            display: block;
+          }
+        }
+
+        @media only screen and (max-width: 780px) {
+          select {
+            width: 52%;
+          }
+        }
 
         div {
           display: flex;
@@ -81,6 +122,19 @@
         cursor: pointer;
           background-color: white;
       }
+    }
+  }
+
+  .form-after-button-wrapper {
+    .save-tef-btn {
+      padding: 10px 30px;
+      border-radius: 50px;
+      border: none;
+      color: white;
+      background-color: #00DA91;
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
   }
 
