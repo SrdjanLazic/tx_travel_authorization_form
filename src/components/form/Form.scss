@@ -5,6 +5,10 @@
   margin-top: 20px;
   justify-content: center;
 
+  @media only screen and (max-width: 1280px) {
+    padding: 5%;
+  }
+
   .title {
     .tx-logo {
 

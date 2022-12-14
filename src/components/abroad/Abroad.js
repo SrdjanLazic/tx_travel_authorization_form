@@ -65,7 +65,7 @@ function Abroad(props) {
 
 
     return (
-        <div className="form-wrapper">
+        <div className="form-wrapper abroad-form">
             <form>
                 <div className="title">
                     <h1>Title</h1>
@@ -74,31 +74,31 @@ function Abroad(props) {
                     <div className="flex-left">
                         <div className="employee">
                             <h3>Employee / Zaposleni</h3>
-                            <div className={"name-surname-input"}>
+                            <div className={"custom-input"}>
                                 <label>Name and surname / Ime i prezime</label>
                                 <input disabled={true} value={form.name} placeholder={"Marko Marković"} type={"text"}/>
                             </div>
-                            <div className={"department-input"}>
+                            <div className={"custom-input"}>
                                 <label>Department / Odeljenje</label>
                                 <input disabled={true} value={form.department} placeholder={"Homegate"} type={"text"}/>
                             </div>
-                            <div className={"passport-input"}>
-                                <label>Department / Odeljenje</label>
-                                <input disabled={true} value={form.department} placeholder={"Homegate"} type={"text"}/>
+                            <div className={"custom-input"}>
+                                <label>Passport No. / Broj pasoša</label>
+                                <input disabled={true} value={form.passport} type={"text"}/>
                             </div>
-                            <div className={"id-input"}>
+                            <div className={"custom-input"}>
                                 <label>ID No. / Broj lične karte</label>
-                                <input required={true} value={form.id} placeholder={"For trips within Serbia"} type={"text"}/>
+                                <input disabled={true} value={form.id} placeholder={"For trips within Serbia"} type={"text"}/>
                             </div>
                         </div>
                     </div>
                     <div className="flex-right">
                         <h3>Submission Date / Datum podnošenja:</h3>
-                        <div className="submission-date-input">
+                        <div className="custom-input">
                             <label>Submission date / Datum podnošenja</label>
                             <input required={true} type={"date"} value={form.submissionDate} disabled={true}/>
                         </div>
-                        <div className="fx-rate-input">
+                        <div className="custom-input">
                             <label>FX rate CHF/RSD</label>
                             <input required={true} type={"number"} onChange={updateFxRate}/>
                         </div>
@@ -108,41 +108,41 @@ function Abroad(props) {
                     <div className="flex-left">
                         <div className="destination">
                             <h3>Destination / Odredište</h3>
-                            <div className={"country-place"}>
+                            <div className={"custom-input"}>
                                 <label>Country and place</label>
                                 <input type={"text"} value={form.countryPlace} disabled={true}/>
                             </div>
-                            <div className={"dep-date-input"}>
+                            <div className={"custom-input"}>
                                 <label>Departure date / Datum polaska</label>
                                 <input required={true} type={"date"}  value={form.depDate}/>
                             </div>
-                            <div className={"end-date-input"}>
+                            <div className={"custom-input"}>
                                 <label>Business trip end time / Vreme završetka sl. puta</label>
                                 <input required={true} type={"date"}  value={form.endDate}/>
                             </div>
-                            <div className={"arrival-date-input"}>
+                            <div className={"custom-input"}>
                                 <label>Arrival date / Datum povratka</label>
                                 <input required={true} type={"date"} value={form.arrivalDate}/>
                             </div>
-                            <div className="number-of-days-input">
+                            <div className="custom-input">
                                 <label>Number of Days / Broj dana</label>
                                 <input type="number" value={numOfDays}/>
                             </div>
-                            <div className={"accomodation-select"}>
+                            <div className={"custom-input"}>
                                 <label>Type of accomodation / Vrsta smeštaja</label>
                                 <select required={true} value={form.accommodationType}>
                                     <option>Hotel</option>
                                     <option>Private Accommodation</option>
                                 </select>
                             </div>
-                            <div className={"transport-input"}>
+                            <div className={"custom-input custom-select"}>
                                 <label>Type of transport / Način transporta</label>
                                 <select required={true} value={form.transportType}>
                                     <option>Car</option>
                                     <option>Plane</option>
                                 </select>
                             </div>
-                            <div className={"vehicle-number"}>
+                            <div className={"custom-input"}>
                                 <label>Vehicle registration number / Reg. broj vozila</label>
                                 <input placeholder={"For trips within Serbia"} type={"text"} value={form.vehicleReg}/>
                             </div>
@@ -151,11 +151,11 @@ function Abroad(props) {
                     <div className="flex-right">
                         <div className="time-inputs">
                             <h3>Time / Vreme</h3>
-                            <div className={"departure-time-input"}>
+                            <div className={"custom-input"}>
                                 <label>Departure time / Vreme polaska</label>
                                 <input required={true} type={"time"}  value={form.depTime}/>
                             </div>
-                            <div className={"end-time-input"}>
+                            <div className={"custom-input"}>
                                 <label>Business trip end time / Vreme završetka sl. puta</label>
                                 <input required={true} type={"time"}  value={form.endTime}/>
                             </div>
@@ -166,16 +166,16 @@ function Abroad(props) {
                     <div className="flex-left">
                         <div className="purpose-container">
                             <h3>Purpose of Travel / Namena službenog putovanja:</h3>
-                            <div className={"purpose-input"}>
+                            <div className={"custom-input"}>
                                 <label>Purpose of Travel / Namena službenog putovanja</label>
-                                <textarea required={true} rows={8} cols={60} placeholder={"Attending leadership Workshop and APIForce conference"} value={form.purpose}/>
+                                <textarea className="custom-textarea" required={true} rows={8} cols={60} placeholder={"Attending leadership Workshop and APIForce conference"} value={form.purpose}/>
                             </div>
                         </div>
                     </div>
                     <div className="flex-right">
                         <div className="cost-center-container">
                             <h3>Charged Cost Center / Alocirati na mesto troška</h3>
-                            <div className={"cc-input"}>
+                            <div className={"custom-input"}>
                                 <label>Charged Cost Center / Alocirati na mesto troška</label>
                                 <select>
                                     <option>CC01219</option>
@@ -214,7 +214,7 @@ function Abroad(props) {
                     </div>
                 </div>
                 <div className="section-bg fourth-section">
-                    <table>
+                    <table className="first-table">
                         <tr>
                             <th colSpan="2">Country and place / Zemlja i mesto</th>
                             <th>Daily Allowance / Br. dnevnica</th>
@@ -317,10 +317,20 @@ function Abroad(props) {
                 </div>
                 <div className="section-bg fifth-section">
                     <div className="disclaimer">
-                        <small>
-                            "I hereby confirm that this travel request complies with the overall requirements of the Swiss immigration law and that the 8 working days allowed by the Swiss Immigration law to perform lucrative activities in the Swiss territory without working VISA have not been exceeded.
+                        <p className="disclaimer-text">"I hereby confirm that this travel request complies with the overall requirements of the Swiss immigration law and that the 8 working days allowed by the Swiss Immigration law to perform lucrative activities in the Swiss territory without working VISA have not been exceeded.
                             I also confirm that appropriate documentation supporting the activities of the employee during his/her stay in Switzerland exists and has been provided to the Administrative Assistant in Belgrade for filing in case of authorities’ inspection."
-                        </small>
+                        </p>
+                    </div>
+                    <div className="signature">
+                        <div className="signature-title-wrapper">
+                            <p className="signature-title">
+                                Managing Director or Delegate's Signature / Ime i prezime i potpis Direktora ili Ostalog predstavnika
+                            </p>
+                            <div className="signature-line"></div>
+                            <div className="signature-footer">
+                                <small>Simon Maurer or Jelena Petrović or Ana Arnaut Vučenović</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
