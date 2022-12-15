@@ -68,7 +68,7 @@ function Abroad(props) {
         <div className="form-wrapper abroad-form">
             <form>
                 <div className="title">
-                    <h1>Title</h1>
+                    <img className="tx-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Logo_tx_group.png/1920px-Logo_tx_group.png" alt=""/>
                 </div>
                 <div className="section-bg first-section">
                     <div className="flex-left">

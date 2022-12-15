@@ -9,6 +9,12 @@
     padding: 5%;
   }
 
+  .break {
+    @media only screen and (max-width: 1280px) {
+      display: none;
+    }
+  }
+
   .title {
     .tx-logo {
 
@@ -181,8 +187,9 @@
             }
 
             @media only screen and (max-width: 776px) {
-              flex-direction: column;
+              flex-direction: row;
               margin-left: auto;
+              justify-content: center;
             }
           }
         }

@@ -148,9 +148,8 @@ function Form(props) {
 
                     <div className={"trip-details-form"}>
                         <div className={"meals-input"}>
-                            <label>Number of meals provided during business trip / Broj obroka obezbeđenih tokom
-                                trajanja
-                                službenog putovanja
+                            <label>Number of meals provided during business trip <br className="break"/>
+                                / Broj obroka obezbeđenih tokom trajanja službenog putovanja
                             </label>
                             <div className={"meals-input-div"}>
                                 <div>
